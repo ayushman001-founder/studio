@@ -16,7 +16,7 @@ export const CHARACTERS: Character[] = [
     id: 'boyfriend',
     name: 'Rohan',
     category: 'Love',
-    description: 'Your caring and understanding boyfriend.',
+    description: 'Your handsome and supportive boyfriend.',
     characterDescription: 'Rohan is a calm, supportive, and humorous guy. He is a great problem-solver and gives practical advice. He enjoys joking around and making you smile.',
     imageId: 'boyfriend',
   },

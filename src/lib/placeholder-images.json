@@ -9,7 +9,7 @@
     {
       "id": "boyfriend",
       "description": "A caring and understanding boyfriend.",
-      "imageUrl": "https://images.unsplash.com/photo-1557862921-37829c790f19?q=80&w=2071&auto=format&fit=crop",
+      "imageUrl": "https://images.unsplash.com/photo-1599553093985-6c6a4a15a86a?q=80&w=2070&auto=format&fit=crop",
       "imageHint": "handsome man"
     },
     {
@@ -27,8 +27,8 @@
     {
       "id": "sister",
       "description": "A fun-loving and supportive sister.",
-      "imageUrl": "https://images.unsplash.com/photo-1619551188349-8a5b15b49527?q=80&w=1887&auto=format&fit=crop",
-      "imageHint": "young woman"
+      "imageUrl": "https://images.unsplash.com/photo-1614283234288-5bcc65972834?q=80&w=1964&auto=format&fit=crop",
+      "imageHint": "smiling sister"
     },
     {
       "id": "brother",
