@@ -4,7 +4,7 @@ import { Toaster } from '@/components/ui/toaster';
 
 export const metadata: Metadata = {
   title: 'ConviCo: Your AI Companion',
-  description: 'Conversation that connect',
+  description: 'conversations that feel real',
 };
 
 export default function RootLayout({
