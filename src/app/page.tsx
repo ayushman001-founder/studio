@@ -1,4 +1,4 @@
-import { AuthForm } from '@/components/auth/auth-form';
+import { AuthFormClient } from '@/components/auth/auth-form-client';
 import { Logo } from '@/components/logo';
 
 export default function AuthenticationPage() {
@@ -46,7 +46,7 @@ export default function AuthenticationPage() {
           <div className="flex flex-col space-y-2 text-center">
              <Logo />
           </div>
-          <AuthForm />
+          <AuthFormClient />
         </div>
       </div>
     </div>
