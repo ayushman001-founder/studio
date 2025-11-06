@@ -3,38 +3,62 @@
     {
       "id": "girlfriend",
       "description": "A loving and supportive girlfriend.",
-      "imageUrl": "https://images.unsplash.com/photo-1557053908-4793c484d06f?crop=entropy&cs=tinysrgb&fit=max&fm=jpg&ixid=M3w3NDE5ODJ8MHwxfHNlYXJjaHw0fHx3b21hbiUyMHBvcnRyYWl0fGVufDB8fHx8MTc2MjMzOTU2MHww&ixlib=rb-4.1.0&q=80&w=1080",
-      "imageHint": "woman portrait"
+      "imageUrl": "https://images.unsplash.com/photo-1604004555029-43c3756c4295?q=80&w=1887&auto=format&fit=crop",
+      "imageHint": "beautiful woman"
     },
     {
       "id": "boyfriend",
       "description": "A caring and understanding boyfriend.",
-      "imageUrl": "https://images.unsplash.com/photo-1594672830234-ba4cfe1202dc?crop=entropy&cs=tinysrgb&fit=max&fm=jpg&ixid=M3w3NDE5ODJ8MHwxfHNlYXJjaHwxMHx8bWFuJTIwcG9ydHJhaXR8ZW58MHx8fHwxNzYyNDE4NjI2fDA&ixlib=rb-4.1.0&q=80&w=1080",
-      "imageHint": "man portrait"
+      "imageUrl": "https://images.unsplash.com/photo-1557862921-37829c790f19?q=80&w=2071&auto=format&fit=crop",
+      "imageHint": "handsome man"
     },
     {
       "id": "mom",
       "description": "A warm and nurturing mother.",
-      "imageUrl": "https://images.unsplash.com/photo-1625954265701-b73c91eb2330?crop=entropy&cs=tinysrgb&fit=max&fm=jpg&ixid=M3w3NDE5ODJ8MHwxfHNlYXJjaHw4fHxvbGRlciUyMHdvbWFufGVufDB8fHx8MTc2MjM2Mzg2OXww&ixlib=rb-4.1.0&q=80&w=1080",
-      "imageHint": "older woman"
+      "imageUrl": "https://images.unsplash.com/photo-1543168254-624e4709323b?q=80&w=1887&auto=format&fit=crop",
+      "imageHint": "caring mother"
     },
     {
       "id": "dad",
       "description": "A wise and guiding father.",
-      "imageUrl": "https://images.unsplash.com/photo-1611178206041-54d5e075be45?crop=entropy&cs=tinysrgb&fit=max&fm=jpg&ixid=M3w3NDE5ODJ8MHwxfHNlYXJjaHw2fHxvbGRlciUyMG1hbnxlbnwwfHx8fDE3NjI0Mjg0MjV8MA&ixlib=rb-4.1.0&q=80&w=1080",
-      "imageHint": "older man"
+      "imageUrl": "https://images.unsplash.com/photo-1507003211169-0a1dd7228f2d?q=80&w=1887&auto=format&fit=crop",
+      "imageHint": "wise father"
     },
     {
-      "id": "friend",
-      "description": "A fun and reliable friend.",
-      "imageUrl": "https://images.unsplash.com/photo-1522529599102-193c0d76b5b6?crop=entropy&cs=tinysrgb&fit=max&fm=jpg&ixid=M3w3NDE5ODJ8MHwxfHNlYXJjaHw4fHxwZXJzb24lMjBzbWlsaW5nfGVufDB8fHx8MTc2MjQwNTcyNHww&ixlib=rb-4.1.0&q=80&w=1080",
-      "imageHint": "person smiling"
+      "id": "sister",
+      "description": "A fun-loving and supportive sister.",
+      "imageUrl": "https://images.unsplash.com/photo-1614283233556-f35b7c8439ba?q=80&w=1887&auto=format&fit=crop",
+      "imageHint": "young woman"
+    },
+    {
+      "id": "brother",
+      "description": "A protective and fun brother.",
+      "imageUrl": "https://images.unsplash.com/photo-1506794778202-cad84cf45f1d?q=80&w=1887&auto=format&fit=crop",
+      "imageHint": "young man"
+    },
+    {
+      "id": "friend-female-1",
+      "description": "A fun and reliable best friend.",
+      "imageUrl": "https://images.unsplash.com/photo-1494790108377-be9c29b29330?q=80&w=1887&auto=format&fit=crop",
+      "imageHint": "smiling woman"
+    },
+    {
+      "id": "friend-male-1",
+      "description": "A witty and adventurous friend.",
+      "imageUrl": "https://images.unsplash.com/photo-1521119989659-a83eee488004?q=80&w=1894&auto=format&fit=crop",
+      "imageHint": "smiling man"
+    },
+    {
+      "id": "friend-female-2",
+      "description": "A calm and artistic best friend.",
+      "imageUrl": "https://images.unsplash.com/photo-1580489944761-15a19d654956?q=80&w=1961&auto=format&fit=crop",
+      "imageHint": "artistic woman"
     },
     {
       "id": "mentor",
       "description": "An experienced and insightful mentor.",
-      "imageUrl": "https://images.unsplash.com/photo-1655249493799-9cee4fe983bb?crop=entropy&cs=tinysrgb&fit=max&fm=jpg&ixid=M3w3NDE5ODJ8MHwxfHNlYXJjaHw1fHxwcm9mZXNzaW9uYWwlMjBwZXJzb258ZW58MHx8fHwxNzYyMzQyMDYyfDA&ixlib=rb-4.1.0&q=80&w=1080",
-      "imageHint": "professional person"
+      "imageUrl": "https://images.unsplash.com/photo-1531891437562-4301cf35b7e4?q=80&w=1964&auto=format&fit=crop",
+      "imageHint": "professional man"
     },
     {
       "id": "co-founder",

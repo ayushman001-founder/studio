@@ -3,7 +3,7 @@
 import { useParams, notFound } from 'next/navigation';
 import React, { useState, useRef, useEffect } from 'react';
 import Image from 'next/image';
-import { ArrowLeft, Loader2, Send, Settings, Bot, User } from 'lucide-react';
+import { ArrowLeft, Loader2, Send, Settings, Bot, User, Trash2 } from 'lucide-react';
 import Link from 'next/link';
 
 import { Avatar, AvatarFallback, AvatarImage } from '@/components/ui/avatar';
@@ -12,6 +12,17 @@ import { Input } from '@/components/ui/input';
 import { ScrollArea } from '@/components/ui/scroll-area';
 import { Separator } from '@/components/ui/separator';
 import { Sheet, SheetContent, SheetDescription, SheetHeader, SheetTitle, SheetTrigger } from '@/components/ui/sheet';
+import {
+  AlertDialog,
+  AlertDialogAction,
+  AlertDialogCancel,
+  AlertDialogContent,
+  AlertDialogDescription,
+  AlertDialogFooter,
+  AlertDialogHeader,
+  AlertDialogTitle,
+  AlertDialogTrigger,
+} from "@/components/ui/alert-dialog"
 import { cn } from '@/lib/utils';
 import { CHARACTERS } from '@/lib/data';
 import { PlaceHolderImages } from '@/lib/placeholder-images';
@@ -109,6 +120,10 @@ export default function ChatPage() {
       setIsLoading(false);
     }
   };
+  
+  const handleDeleteMessage = (messageId: number) => {
+    setMessages((prev) => prev.filter((message) => message.id !== messageId));
+  };
 
   const handleCharacterUpdate = (updatedDescription: string) => {
     if (character) {
@@ -176,10 +191,10 @@ export default function ChatPage() {
       <ScrollArea className="flex-1" ref={scrollAreaRef}>
         <div className="p-4 space-y-4">
           {messages.map((message) => (
-            <div
+             <div
               key={message.id}
               className={cn(
-                'flex items-start gap-3',
+                'flex items-end gap-3 group',
                 message.sender === 'user' ? 'justify-end' : 'justify-start'
               )}
             >
@@ -198,10 +213,34 @@ export default function ChatPage() {
               >
                 {message.text}
               </div>
-               {message.sender === 'user' && (
-                <Avatar className="h-8 w-8">
-                    <AvatarFallback><User size={20} /></AvatarFallback>
-                </Avatar>
+              {message.sender === 'user' && (
+                 <div className="flex items-center gap-2">
+                    <AlertDialog>
+                      <AlertDialogTrigger asChild>
+                        <Button variant="ghost" size="icon" className="h-7 w-7 opacity-0 group-hover:opacity-100 transition-opacity">
+                            <Trash2 className="h-4 w-4" />
+                            <span className="sr-only">Delete message</span>
+                        </Button>
+                      </AlertDialogTrigger>
+                      <AlertDialogContent>
+                        <AlertDialogHeader>
+                          <AlertDialogTitle>Are you sure?</AlertDialogTitle>
+                          <AlertDialogDescription>
+                            This action cannot be undone. This will permanently delete your message.
+                          </AlertDialogDescription>
+                        </AlertDialogHeader>
+                        <AlertDialogFooter>
+                          <AlertDialogCancel>Cancel</AlertDialogCancel>
+                          <AlertDialogAction onClick={() => handleDeleteMessage(message.id)}>
+                            Delete
+                          </AlertDialogAction>
+                        </AlertDialogFooter>
+                      </AlertDialogContent>
+                    </AlertDialog>
+                    <Avatar className="h-8 w-8">
+                        <AvatarFallback><User size={20} /></AvatarFallback>
+                    </Avatar>
+                </div>
               )}
             </div>
           ))}
