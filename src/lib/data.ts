@@ -1,3 +1,4 @@
+
 import type { Character, CharacterCategory } from '@/lib/definitions';
 
 export const CATEGORIES: CharacterCategory[] = ['Love', 'Family', 'Friend', 'Business'];
