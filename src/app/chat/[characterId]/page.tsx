@@ -18,13 +18,21 @@ import { PlaceHolderImages } from '@/lib/placeholder-images';
 import { CharacterCustomizationForm } from '@/components/chat/character-customization';
 import { aiChatInterface, AIChatInterfaceInput } from '@/ai/flows/ai-chat-interface';
 import { useToast } from '@/hooks/use-toast';
-import type { Character } from '@/lib/definitions';
+import type { Character, UserProfile } from '@/lib/definitions';
 
 interface Message {
   id: number;
   text: string;
   sender: 'user' | 'ai';
 }
+
+// A mock function to get user profile. In a real app, this would fetch from a database.
+const MOCK_USER_PROFILE: UserProfile = {
+  age: 25,
+  gender: 'Female',
+  language: 'Hinglish',
+  country: 'India',
+};
 
 export default function ChatPage() {
   const params = useParams();
@@ -33,6 +41,7 @@ export default function ChatPage() {
 
   // Use useState and useEffect to avoid server/client mismatch for character data
   const [character, setCharacter] = useState<Character | null>(null);
+  const [userProfile, setUserProfile] = useState<UserProfile>(MOCK_USER_PROFILE);
 
   useEffect(() => {
     const foundCharacter = CHARACTERS.find((c) => c.id === characterId);
@@ -41,6 +50,9 @@ export default function ChatPage() {
     } else {
       notFound();
     }
+    // In a real app, you would fetch the user's profile here.
+    // For now, we use the mock profile.
+    // You could also store it in a global state/context.
   }, [characterId]);
 
   const [messages, setMessages] = useState<Message[]>([]);
@@ -71,6 +83,9 @@ export default function ChatPage() {
         message: input,
         category: character.category,
         characterDescription: character.characterDescription,
+        userProfile: {
+          language: userProfile.language
+        }
       };
 
       const result = await aiChatInterface(aiInput);
