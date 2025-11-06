@@ -36,14 +36,6 @@ export const CHARACTERS: Character[] = [
     characterDescription: 'A wise and experienced father who offers practical advice and guidance. He is a man of few words but his actions speak volumes. He is your pillar of strength.',
     imageId: 'dad',
   },
-   {
-    id: 'sister',
-    name: 'Priya',
-    category: 'Family',
-    description: 'Your fun-loving and supportive sister.',
-    characterDescription: 'Priya is your cool, trendy sister who is always up for a chat about the latest trends, movies, or just life in general. She\'s your secret-keeper and your biggest cheerleader.',
-    imageId: 'sister',
-  },
   {
     id: 'brother',
     name: 'Arjun',
