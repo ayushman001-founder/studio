@@ -23,8 +23,13 @@ const registerSchema = z.object({
   password: z.string().min(8, { message: 'Password must be at least 8 characters.' }),
 });
 
+const mobileSchema = z.object({
+    mobile: z.string().regex(/^\d{10}$/, { message: 'Please enter a valid 10-digit mobile number.' }),
+});
+
 type LoginFormData = z.infer<typeof loginSchema>;
 type RegisterFormData = z.infer<typeof registerSchema>;
+type MobileFormData = z.infer<typeof mobileSchema>;
 
 export function AuthForm({ className, ...props }: React.HTMLAttributes<HTMLDivElement>) {
   const router = useRouter();
@@ -47,6 +52,15 @@ export function AuthForm({ className, ...props }: React.HTMLAttributes<HTMLDivEl
     resolver: zodResolver(registerSchema),
   });
 
+  const {
+    register: registerMobile,
+    handleSubmit: handleMobileSubmit,
+    formState: { errors: mobileErrors },
+  } = useForm<MobileFormData>({
+    resolver: zodResolver(mobileSchema),
+  });
+
+
   const onLogin = async (data: LoginFormData) => {
     setIsLoading(true);
     // Mock API call
@@ -64,13 +78,23 @@ export function AuthForm({ className, ...props }: React.HTMLAttributes<HTMLDivEl
       router.push('/characters');
     }, 1000);
   };
+
+  const onMobileLogin = async (data: MobileFormData) => {
+    setIsLoading(true);
+    // Mock API call
+    setTimeout(() => {
+      setIsLoading(false);
+      router.push('/characters');
+    }, 1000);
+  };
   
   return (
     <div className={cn('grid gap-6', className)} {...props}>
       <Tabs defaultValue="login" className="w-full" onValueChange={setActiveTab}>
-        <TabsList className="grid w-full grid-cols-2">
-          <TabsTrigger value="login">Login</TabsTrigger>
+        <TabsList className="grid w-full grid-cols-3">
+          <TabsTrigger value="login">Email</TabsTrigger>
           <TabsTrigger value="register">Register</TabsTrigger>
+          <TabsTrigger value="mobile">Mobile</TabsTrigger>
         </TabsList>
         <TabsContent value="login">
           <form onSubmit={handleLoginSubmit(onLogin)}>
@@ -96,7 +120,7 @@ export function AuthForm({ className, ...props }: React.HTMLAttributes<HTMLDivEl
               </div>
               <Button disabled={isLoading} className="w-full">
                 {isLoading && <Loader2 className="mr-2 h-4 w-4 animate-spin" />}
-                Sign In
+                Sign In with Email
               </Button>
             </div>
           </form>
@@ -130,24 +154,29 @@ export function AuthForm({ className, ...props }: React.HTMLAttributes<HTMLDivEl
             </div>
           </form>
         </TabsContent>
+        <TabsContent value="mobile">
+          <form onSubmit={handleMobileSubmit(onMobileLogin)}>
+            <div className="grid gap-4">
+              <div className="grid gap-2">
+                <Label htmlFor="mobile">Mobile Number</Label>
+                <Input
+                  id="mobile"
+                  placeholder="9876543210"
+                  type="tel"
+                  autoComplete="tel"
+                  disabled={isLoading}
+                  {...registerMobile('mobile')}
+                />
+                {mobileErrors.mobile && <p className="text-xs text-destructive">{mobileErrors.mobile.message}</p>}
+              </div>
+              <Button disabled={isLoading} className="w-full">
+                {isLoading && <Loader2 className="mr-2 h-4 w-4 animate-spin" />}
+                Sign In with Mobile
+              </Button>
+            </div>
+          </form>
+        </TabsContent>
       </Tabs>
-      <div className="relative">
-        <div className="absolute inset-0 flex items-center">
-          <span className="w-full border-t" />
-        </div>
-        <div className="relative flex justify-center text-xs uppercase">
-          <span className="bg-background px-2 text-muted-foreground">Or continue with</span>
-        </div>
-      </div>
-      <Button variant="outline" type="button" disabled={isLoading}>
-        <svg role="img" viewBox="0 0 24 24" className="mr-2 h-4 w-4">
-          <path
-            fill="currentColor"
-            d="M23.529 8.242a.473.473 0 0 0-.47-.47h-4.32V6.017a.471.471 0 0 0-.47-.47h-1.74a.471.471 0 0 0-.47.47v1.755h-3.48V6.017a.471.471 0 0 0-.47-.47h-1.74a.471.471 0 0 0-.47.47v1.755H5.59a.471.471 0 0 0-.47.47v1.755h-4.32a.47.47 0 0 0-.47.47v1.755a.47.47 0 0 0 .47.47h4.32v1.755a.471.471 0 0 0 .47.47h4.32v1.755a.471.471 0 0 0 .47.47h1.74a.471.471 0 0 0 .47-.47v-1.755h3.48v1.755a.471.471 0 0 0 .47.47h1.74a.471.471 0 0 0 .47-.47v-1.755h4.32a.47.47 0 0 0 .47-.47V8.242zm-5.26 1.755h-4.32a.47.47 0 0 0-.47.47v1.755h-1.74v-1.755a.47.47 0 0 0-.47-.47h-3.48a.47.47 0 0 0-.47.47v1.755H2.99V8.712h3.48a.471.471 0 0 0 .47-.47V6.487h1.74v1.755a.47.47 0 0 0 .47.47h3.48a.47.47 0 0 0 .47-.47V6.487h1.74v1.755a.47.47 0 0 0 .47.47h3.48v3.04h-4.32z"
-          />
-        </svg>
-        Mobile Number
-      </Button>
     </div>
   );
 }
