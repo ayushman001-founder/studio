@@ -1,3 +1,46 @@
 {
-  "placeholderImages": []
+  "placeholderImages": [
+    {
+      "id": "girlfriend",
+      "description": "A loving and supportive girlfriend.",
+      "imageUrl": "https://images.unsplash.com/photo-1557053908-4793c484d06f?crop=entropy&cs=tinysrgb&fit=max&fm=jpg&ixid=M3w3NDE5ODJ8MHwxfHNlYXJjaHw0fHx3b21hbiUyMHBvcnRyYWl0fGVufDB8fHx8MTc2MjMzOTU2MHww&ixlib=rb-4.1.0&q=80&w=1080",
+      "imageHint": "woman portrait"
+    },
+    {
+      "id": "boyfriend",
+      "description": "A caring and understanding boyfriend.",
+      "imageUrl": "https://images.unsplash.com/photo-1594672830234-ba4cfe1202dc?crop=entropy&cs=tinysrgb&fit=max&fm=jpg&ixid=M3w3NDE5ODJ8MHwxfHNlYXJjaHwxMHx8bWFuJTIwcG9ydHJhaXR8ZW58MHx8fHwxNzYyNDE4NjI2fDA&ixlib=rb-4.1.0&q=80&w=1080",
+      "imageHint": "man portrait"
+    },
+    {
+      "id": "mom",
+      "description": "A warm and nurturing mother.",
+      "imageUrl": "https://images.unsplash.com/photo-1625954265701-b73c91eb2330?crop=entropy&cs=tinysrgb&fit=max&fm=jpg&ixid=M3w3NDE5ODJ8MHwxfHNlYXJjaHw4fHxvbGRlciUyMHdvbWFufGVufDB8fHx8MTc2MjM2Mzg2OXww&ixlib=rb-4.1.0&q=80&w=1080",
+      "imageHint": "older woman"
+    },
+    {
+      "id": "dad",
+      "description": "A wise and guiding father.",
+      "imageUrl": "https://images.unsplash.com/photo-1611178206041-54d5e075be45?crop=entropy&cs=tinysrgb&fit=max&fm=jpg&ixid=M3w3NDE5ODJ8MHwxfHNlYXJjaHw2fHxvbGRlciUyMG1hbnxlbnwwfHx8fDE3NjI0Mjg0MjV8MA&ixlib=rb-4.1.0&q=80&w=1080",
+      "imageHint": "older man"
+    },
+    {
+      "id": "friend",
+      "description": "A fun and reliable friend.",
+      "imageUrl": "https://images.unsplash.com/photo-1522529599102-193c0d76b5b6?crop=entropy&cs=tinysrgb&fit=max&fm=jpg&ixid=M3w3NDE5ODJ8MHwxfHNlYXJjaHw4fHxwZXJzb24lMjBzbWlsaW5nfGVufDB8fHx8MTc2MjQwNTcyNHww&ixlib=rb-4.1.0&q=80&w=1080",
+      "imageHint": "person smiling"
+    },
+    {
+      "id": "mentor",
+      "description": "An experienced and insightful mentor.",
+      "imageUrl": "https://images.unsplash.com/photo-1655249493799-9cee4fe983bb?crop=entropy&cs=tinysrgb&fit=max&fm=jpg&ixid=M3w3NDE5ODJ8MHwxfHNlYXJjaHw1fHxwcm9mZXNzaW9uYWwlMjBwZXJzb258ZW58MHx8fHwxNzYyMzQyMDYyfDA&ixlib=rb-4.1.0&q=80&w=1080",
+      "imageHint": "professional person"
+    },
+    {
+      "id": "co-founder",
+      "description": "A driven and collaborative co-founder.",
+      "imageUrl": "https://images.unsplash.com/photo-1560250097-0b93528c311a?crop=entropy&cs=tinysrgb&fit=max&fm=jpg&ixid=M3w3NDE5ODJ8MHwxfHNlYXJjaHwzfHxidXNpbmVzcyUyMHBlcnNvbnxlbnwwfHx8fDE3NjIzNjI0MjR8MA&ixlib=rb-4.1.0&q=80&w=1080",
+      "imageHint": "business person"
+    }
+  ]
 }
