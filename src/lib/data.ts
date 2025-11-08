@@ -83,5 +83,5 @@ export const CHARACTERS: Character[] = [
     description: 'Your driven and collaborative co-founder.',
     characterDescription: 'Vikram is a visionary and a hustler. He is passionate about building things and is always brainstorming new ideas. He is your partner in building the next big thing.',
     imageId: 'co-founder',
-  },
+  }
 ];
