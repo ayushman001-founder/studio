@@ -70,13 +70,12 @@ export default function ChatPage() {
   const [input, setInput] = useState('');
   const [isLoading, setIsLoading] = useState(false);
   const scrollAreaRef = useRef<HTMLDivElement>(null);
+  const viewportRef = useRef<HTMLDivElement>(null);
 
   useEffect(() => {
-    if (scrollAreaRef.current) {
-      scrollAreaRef.current.scrollTo({
-        top: scrollAreaRef.current.scrollHeight,
-        behavior: 'smooth',
-      });
+    const viewport = viewportRef.current;
+    if (viewport) {
+      viewport.scrollTop = viewport.scrollHeight;
     }
   }, [messages]);
 
@@ -188,7 +187,7 @@ export default function ChatPage() {
         </Sheet>
       </header>
 
-      <ScrollArea className="flex-1" ref={scrollAreaRef}>
+      <ScrollArea className="flex-1" ref={scrollAreaRef} viewportRef={viewportRef}>
         <div className="p-4 space-y-4">
           {messages.map((message) => (
              <div
