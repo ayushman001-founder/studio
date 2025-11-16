@@ -91,7 +91,7 @@ export default function ChatPage() {
     try {
       const aiInput: AIChatInterfaceInput = {
         message: input,
-        character: character,
+        character: character, // Pass the character object directly
         userProfile: userProfile
       };
 
