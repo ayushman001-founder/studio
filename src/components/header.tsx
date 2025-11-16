@@ -14,6 +14,7 @@ import {
 import { Avatar, AvatarFallback, AvatarImage } from '@/components/ui/avatar';
 import { Button } from './ui/button';
 import { Logo } from './logo';
+import Image from 'next/image';
 
 export function Header() {
   const router = useRouter();
@@ -28,23 +29,14 @@ export function Header() {
       <div className="container flex h-16 items-center">
         <div className="mr-4 hidden md:flex">
           <Link href="/characters" className="mr-6 flex items-center space-x-2">
-            <svg
-              xmlns="http://www.w3.org/2000/svg"
-              width="24"
-              height="24"
-              viewBox="0 0 24 24"
-              fill="none"
-              stroke="currentColor"
-              strokeWidth="2"
-              strokeLinecap="round"
-              strokeLinejoin="round"
-              className="h-6 w-6 text-primary"
-            >
-              <path d="M15 6.34C14.37 6.12 13.7 6 13 6a5 5 0 0 0-5 5c0 .7.12 1.37.34 2" />
-              <path d="M9 17.66C9.63 17.88 10.3 18 11 18a5 5 0 0 0 5-5c0-.7-.12-1.37-.34-2" />
-              <path d="M2 12s3-7 10-7 10 7 10 7-3 7-10 7-10-7-10-7Z" />
-              <path d="M12 12v0" />
-            </svg>
+            <div className="relative h-10 w-10">
+              <Image 
+                src="/convico-logo.png"
+                alt="ConviCo Logo"
+                fill
+                className="rounded-full object-cover"
+              />
+            </div>
             <span className="hidden font-bold sm:inline-block">ConviCo</span>
           </Link>
         </div>
