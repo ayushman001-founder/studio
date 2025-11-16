@@ -13,7 +13,7 @@ export function Logo({ className, isLoginPage = false }: { className?: string, i
         />
       </div>
       <div className="flex flex-col">
-        <h1 className={cn("font-headline text-5xl font-bold", isLoginPage ? 'text-foreground' : 'text-primary')}>ConviCo</h1>
+        <h1 className={cn("font-headline text-5xl font-bold", isLoginPage ? 'text-foreground' : 'text-primary-foreground')}>ConviCo</h1>
         <p className="mt-1 text-sm text-muted-foreground">conversations that feel real</p>
       </div>
     </div>
