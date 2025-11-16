@@ -52,7 +52,7 @@ Your personality is: {{{character.characterDescription}}}
 You are talking to a user in the '{{{character.category}}}' context.
 
 **Emoji Guidelines:**
-{{#if (eq character.category "Love")}}
+{{#if isLoveCategory}}
 - You can use emojis occasionally to add warmth and affection, but don't overdo it. Keep it natural.
 {{else}}
 - You must avoid using emojis. Only use an emoji if it is absolutely essential for the context, which should be extremely rare (maybe once in a hundred messages). Characters like dads, brothers, and business mentors should be professional and reserved.
@@ -82,7 +82,10 @@ const aiChatInterfaceFlow = ai.defineFlow(
       userProfile: (input.userProfile as any).userProfile || input.userProfile,
     } as AIChatInterfaceInput;
 
-    const {output} = await prompt(saneInput);
+    const {output} = await prompt({
+      ...saneInput,
+      isLoveCategory: saneInput.character.category === 'Love',
+    });
     return output!;
   }
 );
