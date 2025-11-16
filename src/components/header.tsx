@@ -13,8 +13,6 @@ import {
 } from '@/components/ui/dropdown-menu';
 import { Avatar, AvatarFallback, AvatarImage } from '@/components/ui/avatar';
 import { Button } from './ui/button';
-import { Logo } from './logo';
-import Image from 'next/image';
 
 export function Header() {
   const router = useRouter();
@@ -29,15 +27,7 @@ export function Header() {
       <div className="container flex h-16 items-center">
         <div className="mr-4 hidden md:flex">
           <Link href="/characters" className="mr-6 flex items-center space-x-2">
-            <div className="relative h-10 w-10">
-              <Image 
-                src="/convico-logo.png"
-                alt="ConviCo Logo"
-                fill
-                className="rounded-full object-cover"
-              />
-            </div>
-            <span className="hidden font-bold sm:inline-block">ConviCo</span>
+            <span className="font-bold sm:inline-block">ConviCo</span>
           </Link>
         </div>
         <div className="flex flex-1 items-center justify-end space-x-4">
