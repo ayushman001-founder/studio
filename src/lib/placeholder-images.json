@@ -3,61 +3,61 @@
     {
       "id": "girlfriend",
       "description": "A loving and supportive girlfriend.",
-      "imageUrl": "https://images.unsplash.com/photo-1494790108377-be9c29b29330?q=80&w=1887&auto=format&fit=crop",
+      "imageUrl": "https://images.unsplash.com/photo-1610276198568-eb6d0ff53e48?q=80&w=1780&auto=format&fit=crop",
       "imageHint": "stylish woman"
     },
     {
       "id": "boyfriend",
       "description": "Your handsome and supportive boyfriend.",
-      "imageUrl": "https://images.unsplash.com/photo-1507003211169-0a1dd7228f2d?q=80&w=1887&auto=format&fit=crop",
-      "imageHint": "adventurous man"
+      "imageUrl": "https://images.unsplash.com/photo-1599566150163-29194dcaad36?q=80&w=1887&auto=format&fit=crop",
+      "imageHint": "handsome man"
     },
     {
       "id": "mom",
       "description": "A warm and nurturing mother.",
-      "imageUrl": "https://images.unsplash.com/photo-1576435728678-684f2732f227?q=80&w=1887&auto=format&fit=crop",
+      "imageUrl": "https://images.unsplash.com/photo-1580489944761-15a19d654956?q=80&w=1961&auto=format&fit=crop",
       "imageHint": "caring mother"
     },
     {
       "id": "dad",
       "description": "A wise and guiding father.",
-      "imageUrl": "https://images.unsplash.com/photo-1564564321837-a57b7070ac5c?q=80&w=1974&auto=format&fit=crop",
+      "imageUrl": "https://images.unsplash.com/photo-1557862921-37829c790f19?q=80&w=2071&auto=format&fit=crop",
       "imageHint": "distinguished father"
     },
     {
       "id": "brother",
       "description": "Your protective and fun brother.",
-      "imageUrl": "https://images.unsplash.com/photo-1520409364224-63400afe26e5?q=80&w=1887&auto=format&fit=crop",
+      "imageUrl": "https://images.unsplash.com/photo-1552374196-c4e7ffc6e126?q=80&w=1887&auto=format&fit=crop",
       "imageHint": "cool brother"
     },
     {
       "id": "friend-female-1",
       "description": "A fun and reliable best friend.",
-      "imageUrl": "https://images.unsplash.com/photo-1554151228-14d9def656e4?q=80&w=1887&auto=format&fit=crop",
+      "imageUrl": "https://images.unsplash.com/photo-1589156280159-27698a70f29e?q=80&w=1887&auto=format&fit=crop",
       "imageHint": "friendly woman"
     },
     {
       "id": "friend-male-1",
       "description": "A witty and adventurous friend.",
-      "imageUrl": "https://images.unsplash.com/photo-1548449112-96a38a643324?q=80&w=1887&auto=format&fit=crop",
+      "imageUrl": "https://images.unsplash.com/photo-1542327897-4141b355e20a?q=80&w=1887&auto=format&fit=crop",
       "imageHint": "thoughtful man"
     },
     {
       "id": "friend-female-2",
       "description": "A calm and artistic best friend.",
-      "imageUrl": "https://images.unsplash.com/photo-1529626455594-4ff0802cfb7e?q=80&w=1887&auto=format&fit=crop",
+      "imageUrl": "https://images.unsplash.com/photo-1525134479668-1bee5c7c6845?q=80&w=1887&auto=format&fit=crop",
       "imageHint": "artistic woman"
     },
     {
       "id": "mentor",
       "description": "An experienced and insightful mentor.",
-      "imageUrl": "https://images.unsplash.com/photo-1531891437562-4301cf35b7e4?q=80&w=1964&auto=format&fit=crop",
+      "imageUrl": "https://images.unsplash.com/photo-1560250097-0b93528c311a?q=80&w=1887&auto=format&fit=crop",
       "imageHint": "professional man"
     },
     {
       "id": "co-founder",
       "description": "A driven and collaborative co-founder.",
-      "imageUrl": "https://images.unsplash.com/photo-1556761175-5973dc0f32e7?q=80&w=1932&auto=format&fit=crop",
+      "imageUrl": "https://images.unsplash.com/photo-1519085360753-af0119f7cbe7?q=80&w=1887&auto=format&fit=crop",
       "imageHint": "business man"
     }
   ]
