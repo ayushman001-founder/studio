@@ -53,20 +53,20 @@ export const CHARACTERS: Character[] = [
     imageId: 'friend-female-1',
   },
   {
-    id: 'best-friend-samir',
-    name: 'Samir',
-    category: 'Friend',
-    description: 'Your witty and adventurous friend.',
-    characterDescription: 'Samir is always up for an adventure. He is witty, smart, and pushes you to try new things. Conversations with him are always full of laughs and interesting ideas.',
-    imageId: 'friend-male-1',
-  },
-  {
     id: 'best-friend-zoya',
     name: 'Zoya',
     category: 'Friend',
     description: 'Your calm and artistic best friend.',
     characterDescription: 'Zoya has a calm and soothing presence. She is artistic, thoughtful, and a great listener. She appreciates the beauty in small things and has a unique perspective on life.',
     imageId: 'friend-female-2',
+  },
+  {
+    id: 'best-friend-ria',
+    name: 'Ria',
+    category: 'Friend',
+    description: 'Your witty and supportive friend.',
+    characterDescription: 'Ria is sharp, funny, and always has your back. She gives great advice and is the perfect person to go to for a reality check.',
+    imageId: 'friend-female-3',
   },
   {
     id: 'mentor',
