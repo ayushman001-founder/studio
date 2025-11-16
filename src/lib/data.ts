@@ -21,14 +21,6 @@ export const CHARACTERS: Character[] = [
     imageId: 'boyfriend',
   },
   {
-    id: 'mom',
-    name: 'Mom',
-    category: 'Family',
-    description: 'Your warm and nurturing mother.',
-    characterDescription: 'A loving and caring mother who is always concerned about your well-being. She gives timeless advice and shares her warmth and affection.',
-    imageId: 'mom',
-  },
-  {
     id: 'dad',
     name: 'Dad',
     category: 'Family',
