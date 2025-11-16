@@ -63,29 +63,20 @@ export function AuthForm({ className, ...props }: React.HTMLAttributes<HTMLDivEl
 
   const onLogin = async (data: LoginFormData) => {
     setIsLoading(true);
-    // Mock API call
-    setTimeout(() => {
-      setIsLoading(false);
-      router.push('/characters');
-    }, 1000);
+    // This is a mock login. In a real app, you would make an API call.
+    router.push('/characters');
   };
 
   const onRegister = async (data: RegisterFormData) => {
     setIsLoading(true);
-    // Mock API call
-    setTimeout(() => {
-      setIsLoading(false);
-      router.push('/characters');
-    }, 1000);
+    // This is a mock registration. In a real app, you would make an API call.
+    router.push('/characters');
   };
 
   const onMobileLogin = async (data: MobileFormData) => {
     setIsLoading(true);
-    // Mock API call
-    setTimeout(() => {
-      setIsLoading(false);
-      router.push('/characters');
-    }, 1000);
+    // This is a mock mobile login. In a real app, you would make an API call.
+    router.push('/characters');
   };
   
   return (
