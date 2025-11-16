@@ -74,7 +74,15 @@ const aiChatInterfaceFlow = ai.defineFlow(
     outputSchema: AIChatInterfaceOutputSchema,
   },
   async input => {
-    const {output} = await prompt(input);
+    // The incoming input from the client might be doubly nested.
+    // This gracefully handles both flat and nested structures.
+    const saneInput = {
+      message: input.message,
+      character: (input.character as any).character || input.character,
+      userProfile: (input.userProfile as any).userProfile || input.userProfile,
+    } as AIChatInterfaceInput;
+
+    const {output} = await prompt(saneInput);
     return output!;
   }
 );
