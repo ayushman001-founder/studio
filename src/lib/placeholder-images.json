@@ -3,25 +3,25 @@
     {
       "id": "girlfriend",
       "description": "A loving and supportive girlfriend.",
-      "imageUrl": "https://images.unsplash.com/photo-1596208862939-d99955a420b5?q=80&w=1887&auto=format&fit=crop",
+      "imageUrl": "https://images.unsplash.com/photo-1529626455594-4ff0802cfb7e?q=80&w=1887&auto=format&fit=crop",
       "imageHint": "beautiful woman"
     },
     {
       "id": "boyfriend",
       "description": "Your handsome and supportive boyfriend.",
-      "imageUrl": "https://images.unsplash.com/photo-1506794778202-cad84cf45f1d?q=80&w=1887&auto=format&fit=crop",
+      "imageUrl": "https://images.unsplash.com/photo-1522529599102-193c0d76b5b6?q=80&w=2070&auto=format&fit=crop",
       "imageHint": "handsome man"
     },
     {
       "id": "mom",
       "description": "A warm and nurturing mother.",
-      "imageUrl": "https://images.unsplash.com/photo-1541682448323-86f1c107383a?q=80&w=1887&auto=format&fit=crop",
+      "imageUrl": "https://images.unsplash.com/photo-1594744806549-81d757904558?q=80&w=1887&auto=format&fit=crop",
       "imageHint": "caring mother"
     },
     {
       "id": "dad",
       "description": "A wise and guiding father.",
-      "imageUrl": "https://images.unsplash.com/photo-1520409364224-63400afe26e5?q=80&w=1887&auto=format&fit=crop",
+      "imageUrl": "https://images.unsplash.com/photo-1564564321837-a57b7070ac4f?q=80&w=1974&auto=format&fit=crop",
       "imageHint": "wise father"
     },
     {
@@ -51,7 +51,7 @@
     {
       "id": "mentor",
       "description": "An experienced and insightful mentor.",
-      "imageUrl": "https://images.unsplash.com/photo-1534528741775-53994a69daeb?q=80&w=1964&auto=format&fit=crop",
+      "imageUrl": "https://images.unsplash.com/photo-1557862921-37829c790f19?q=80&w=2071&auto=format&fit=crop",
       "imageHint": "insightful mentor"
     },
     {
