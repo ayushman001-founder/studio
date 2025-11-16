@@ -38,12 +38,12 @@ interface Message {
 }
 
 // A mock function to get user profile. In a real app, this would fetch from a database.
-const MOCK_USER_PROFILE: UserProfile = {
+const getMockUserProfile = (): UserProfile => ({
   age: 25,
   gender: 'Female',
   language: 'Hinglish',
   country: 'India',
-};
+});
 
 export default function ChatPage() {
   const params = useParams();
@@ -52,7 +52,7 @@ export default function ChatPage() {
 
   // Use useState and useEffect to avoid server/client mismatch for character data
   const [character, setCharacter] = useState<Character | null>(null);
-  const [userProfile, setUserProfile] = useState<UserProfile>(MOCK_USER_PROFILE);
+  const [userProfile, setUserProfile] = useState<UserProfile | null>(null);
 
   useEffect(() => {
     const foundCharacter = CHARACTERS.find((c) => c.id === characterId);
@@ -62,8 +62,8 @@ export default function ChatPage() {
       notFound();
     }
     // In a real app, you would fetch the user's profile here.
-    // For now, we use the mock profile.
-    // You could also store it in a global state/context.
+    const profile = getMockUserProfile();
+    setUserProfile(profile);
   }, [characterId]);
 
   const [messages, setMessages] = useState<Message[]>([]);
@@ -81,7 +81,7 @@ export default function ChatPage() {
 
   const handleSendMessage = async (e: React.FormEvent<HTMLFormElement>) => {
     e.preventDefault();
-    if (!input.trim() || !character) return;
+    if (!input.trim() || !character || !userProfile) return;
 
     const userMessage: Message = { id: Date.now(), text: input, sender: 'user' };
     setMessages((prev) => [...prev, userMessage]);
@@ -91,11 +91,8 @@ export default function ChatPage() {
     try {
       const aiInput: AIChatInterfaceInput = {
         message: input,
-        category: character.category,
-        characterDescription: character.characterDescription,
-        userProfile: {
-          language: userProfile.language
-        }
+        character: character,
+        userProfile: userProfile
       };
 
       const result = await aiChatInterface(aiInput);

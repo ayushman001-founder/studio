@@ -10,8 +10,8 @@ export type Character = {
 };
 
 export type UserProfile = {
-  age: number;
-  gender: 'Male' | 'Female' | 'Other';
-  language: 'English' | 'Hindi' | 'Hinglish';
-  country: 'India';
+  age?: number;
+  gender?: 'Male' | 'Female' | 'Other';
+  language?: 'English' | 'Hindi' | 'Hinglish';
+  country?: 'India';
 };
