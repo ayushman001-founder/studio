@@ -7,6 +7,7 @@ export type Character = {
   description: string;
   characterDescription: string;
   imageId: string;
+  introMessage: string;
 };
 
 export type UserProfile = {

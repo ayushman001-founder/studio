@@ -1,7 +1,7 @@
 'use client';
 
 import { useParams, notFound } from 'next/navigation';
-import React, { useState, useRef, useEffect } from 'react';
+import React, { useState, useRef, useEffect, useMemo } from 'react';
 import Image from 'next/image';
 import { ArrowLeft, Loader2, Send, Settings, Bot, User, Trash2 } from 'lucide-react';
 import Link from 'next/link';
@@ -48,29 +48,38 @@ const getMockUserProfile = (): UserProfile => ({
 export default function ChatPage() {
   const params = useParams();
   const { toast } = useToast();
-  const { characterId } = params;
-
-  // Use useState and useEffect to avoid server/client mismatch for character data
-  const [character, setCharacter] = useState<Character | null>(null);
-  const [userProfile, setUserProfile] = useState<UserProfile | null>(null);
-
-  useEffect(() => {
-    const foundCharacter = CHARACTERS.find((c) => c.id === characterId);
-    if (foundCharacter) {
-      setCharacter(foundCharacter);
-    } else {
-      notFound();
-    }
-    // In a real app, you would fetch the user's profile here.
-    const profile = getMockUserProfile();
-    setUserProfile(profile);
-  }, [characterId]);
+  const { characterId } = params as { characterId: string };
 
   const [messages, setMessages] = useState<Message[]>([]);
   const [input, setInput] = useState('');
   const [isLoading, setIsLoading] = useState(false);
   const scrollAreaRef = useRef<HTMLDivElement>(null);
   const viewportRef = useRef<HTMLDivElement>(null);
+
+  const character = useMemo(() => {
+    const foundCharacter = CHARACTERS.find((c) => c.id === characterId);
+    if (!foundCharacter) {
+      notFound();
+    }
+    return foundCharacter;
+  }, [characterId]);
+
+  const userProfile = useMemo(() => getMockUserProfile(), []);
+
+  const [characterState, setCharacterState] = useState<Character>(character);
+
+  useEffect(() => {
+    if (character && character.introMessage && messages.length === 0) {
+      setMessages([
+        {
+          id: Date.now(),
+          text: character.introMessage,
+          sender: 'ai',
+        },
+      ]);
+    }
+  }, [character, messages.length]);
+
 
   useEffect(() => {
     const viewport = viewportRef.current;
@@ -81,7 +90,7 @@ export default function ChatPage() {
 
   const handleSendMessage = async (e: React.FormEvent<HTMLFormElement>) => {
     e.preventDefault();
-    if (!input.trim() || !character || !userProfile) return;
+    if (!input.trim() || !characterState || !userProfile) return;
 
     const userMessage: Message = { id: Date.now(), text: input, sender: 'user' };
     setMessages((prev) => [...prev, userMessage]);
@@ -91,7 +100,7 @@ export default function ChatPage() {
     try {
       const aiInput: AIChatInterfaceInput = {
         message: input,
-        character: character, // Pass the character object directly
+        character: characterState,
         userProfile: userProfile
       };
 
@@ -110,7 +119,6 @@ export default function ChatPage() {
         title: 'Error',
         description: 'Failed to get a response from the AI. Please try again.',
       });
-      // Optionally remove the user message or add an error message to the chat
        setMessages((prev) => prev.filter(m => m.id !== userMessage.id));
     } finally {
       setIsLoading(false);
@@ -122,16 +130,14 @@ export default function ChatPage() {
   };
 
   const handleCharacterUpdate = (updatedDescription: string) => {
-    if (character) {
-      setCharacter({ ...character, characterDescription: updatedDescription });
-      toast({
-        title: 'Companion Updated',
-        description: 'Your companion’s personality has been updated.',
-      });
-    }
+    setCharacterState({ ...characterState, characterDescription: updatedDescription });
+    toast({
+      title: 'Companion Updated',
+      description: 'Your companion’s personality has been updated.',
+    });
   };
 
-  if (!character) {
+  if (!characterState) {
     return (
       <div className="flex h-screen w-full items-center justify-center">
         <Loader2 className="h-8 w-8 animate-spin" />
@@ -139,27 +145,27 @@ export default function ChatPage() {
     );
   }
 
-  const image = PlaceHolderImages.find((p) => p.id === character.imageId);
+  const image = PlaceHolderImages.find((p) => p.id === characterState.imageId);
 
   return (
     <div className="flex h-svh flex-col">
       <header className="flex items-center justify-between border-b p-3">
         <div className="flex items-center gap-3">
           <Button asChild variant="ghost" size="icon" className="md:hidden">
-            <Link href="/characters">
+            <Link href="/characters" prefetch={true}>
               <ArrowLeft />
             </Link>
           </Button>
           <Button asChild variant="ghost" size="icon" className="hidden md:flex">
-            <Link href="/characters">
+            <Link href="/characters" prefetch={true}>
               <ArrowLeft />
             </Link>
           </Button>
           <Avatar>
-            <AvatarImage src={image?.imageUrl} alt={character.name} data-ai-hint={image?.imageHint} />
-            <AvatarFallback>{character.name.charAt(0)}</AvatarFallback>
+            <AvatarImage src={image?.imageUrl} alt={characterState.name} data-ai-hint={image?.imageHint} />
+            <AvatarFallback>{characterState.name.charAt(0)}</AvatarFallback>
           </Avatar>
-          <h2 className="text-lg font-semibold">{character.name}</h2>
+          <h2 className="text-lg font-semibold">{characterState.name}</h2>
         </div>
         <Sheet>
           <SheetTrigger asChild>
@@ -170,14 +176,14 @@ export default function ChatPage() {
           </SheetTrigger>
           <SheetContent>
             <SheetHeader>
-              <SheetTitle>Customize {character.name}</SheetTitle>
+              <SheetTitle>Customize {characterState.name}</SheetTitle>
               <SheetDescription>
                 Fine-tune your companion&apos;s personality. Describe the changes you&apos;d like to see.
               </SheetDescription>
             </SheetHeader>
             <Separator className="my-4" />
             <CharacterCustomizationForm
-              character={character}
+              character={characterState}
               onCharacterUpdate={handleCharacterUpdate}
             />
           </SheetContent>

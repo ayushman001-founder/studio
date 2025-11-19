@@ -79,6 +79,10 @@ export function AuthForm({ className, ...props }: React.HTMLAttributes<HTMLDivEl
     router.push('/characters');
   };
   
+  React.useEffect(() => {
+    router.prefetch('/characters');
+  }, [router]);
+
   return (
     <div className={cn('grid gap-6', className)} {...props}>
       <Tabs defaultValue="login" className="w-full" onValueChange={setActiveTab}>

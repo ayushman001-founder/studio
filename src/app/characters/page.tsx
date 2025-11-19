@@ -68,6 +68,8 @@ export default function CharactersPage() {
                             fill
                             className="object-cover"
                             data-ai-hint={image.imageHint}
+                            sizes="(max-width: 768px) 100vw, (max-width: 1200px) 50vw, 33vw"
+                            priority={true}
                           />
                         </div>
                       </CardHeader>
@@ -77,7 +79,7 @@ export default function CharactersPage() {
                       </CardContent>
                       <CardFooter>
                         <Button asChild className="w-full bg-primary hover:bg-primary/90">
-                          <Link href={`/chat/${character.id}`}>
+                          <Link href={`/chat/${character.id}`} prefetch={true}>
                             <MessageSquare className="mr-2 h-4 w-4" />
                             Chat Now
                           </Link>
